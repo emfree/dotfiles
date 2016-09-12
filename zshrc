@@ -88,7 +88,7 @@ alias ggrep="git grep --break --heading --line-number"
 alias vssh="vagrant ssh"
 alias cb="cargo build"
 alias cr="cargo run"
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias alert='notify-send --urgency=low -t 2000 -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 export VAGRANT_CWD=/home/emfree/vms/xenial64
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
