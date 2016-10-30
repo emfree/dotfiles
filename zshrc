@@ -89,6 +89,16 @@ alias vssh="vagrant ssh"
 alias cb="cargo build"
 alias cr="cargo run"
 alias alert='notify-send --urgency=low -t 2000 -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-export VAGRANT_CWD=/home/emfree/vms/xenial64
+function mkcd() { mkdir -p $1 && cd $1 }
+export VAGRANT_CWD=/home/emfree/vms/yakkety64
+
+chpwd() {
+    echo `pwd` > ~/.pwd
+}
+
+if [[ !(-a "~/.pwd") ]]
+then
+    cd `cat ~/.pwd`
+fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
