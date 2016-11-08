@@ -83,6 +83,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias v="vim"
 alias gl="glog"
 alias ggrep="git grep --break --heading --line-number"
 alias vssh="vagrant ssh"
