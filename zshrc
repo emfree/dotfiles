@@ -53,7 +53,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/local/go/bin:/home/emfree/gocode/bin:/home/emfree/.cargo/bin"
+export PATH="/home/emfree/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/local/go/bin:/home/emfree/gocode/bin:/home/emfree/.cargo/bin:/home/emfree/repos/arcanist/bin:/opt/terraform"
 export GOPATH="/home/emfree/gocode"
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -94,8 +94,9 @@ alias cb="cargo build"
 alias cr="cargo run"
 alias alert='notify-send --urgency=low -t 2000 -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 function mkcd() { mkdir -p $1 && cd $1 }
+function histgrep { history | grep $@ }
 export VAGRANT_CWD=/home/emfree/vms/client-server
-export HONEYPACKET_DIR=/home/emfree/gocode/src/github.com/honeycombio/honeypacket
+export HONEYPACKET_DIR=/home/emfree/gocode/src/github.com/honeycombio/honeycomb-tcpagent
 
 chpwd() {
     echo `pwd` > ~/.pwd
@@ -105,5 +106,7 @@ if [[ !(-a "~/.pwd") ]]
 then
     cd `cat ~/.pwd`
 fi
+
+eval "$(rbenv init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
